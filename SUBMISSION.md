@@ -34,3 +34,17 @@
 - Generated audio files (MiniMax)
 - Updated AI agent rules file
 - This submission document
+
+
+### Veo (Google Gemini Video) Issue
+- Video generation failed with error:
+  `module 'google.genai.types' has no attribute 'GenerateVideoConfig'`
+- Investigation:
+  - Error originates from provider implementation in `providers/veo.py`
+  - Indicates SDK contract mismatch with installed `google-genai` package
+- Conclusion:
+  - Likely breaking change or version drift in Google GenAI SDK
+  - Not resolvable without pinning or modifying dependency versions
+- Action:
+  - Documented and proceeded with audio-only generation
+
